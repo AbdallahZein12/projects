@@ -1,0 +1,22 @@
+{% extends 'base.html' %} <!-- extends base template to inherit base code and override my previous blocks-->
+{% block content %} <!-- I am creating a form since input data needs to be received on the backend and handle it-->
+<form method="post" class="buttons"> <!--Sends post request to the route home page-->
+    <h3>
+        Enter Chat Room
+    </h3>
+    <div>
+        <label>Name: </label>
+        <input type="text" placeholder="Pick a name!" name="name" value="{{name}}"/> <!-- the value attribute is to reinject previous input in case of mistake-->
+    </div>
+    <div class="join"> <!-- join button and text input for room code-->
+        <input type="text" placeholder="Room Code" name="code" value="{{code}}"/> 
+        <button type="submit" name="join">Join a Room</button>
+    </div>
+    <button type="submit" name="create" class="create-btn">Create a Room</button>
+    {% if error %}
+    <ul>
+        <li>{{error}}</li>
+    </ul>
+    {% endif %}
+</form>
+{% endblock %}

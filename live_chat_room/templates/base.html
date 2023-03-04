@@ -1,0 +1,18 @@
+<!-- Base template for the generic style of the entire website. for other temps I override parts of the base tempelate so that I can reuse code througout the whole website  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}"/> <!--link to style sheet. href double braces indicate variable in the jenga templating engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script> <!-- script tag to implement socketio to communicate with backend python-->
+</head>
+<body>
+    <div class="content">
+        {% block content %} {% endblock %} <!-- block: reusable part of the code that could be overwriten so that in my child templates, I can write the same block -->
+    </div>
+</body>
+</html>
