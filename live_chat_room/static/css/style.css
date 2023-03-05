@@ -47,7 +47,7 @@
     display: flex;
 }
 
-h2 {
+h2, h6 {
     text-align: center;
 }
 
