@@ -113,18 +113,18 @@ class AdobeAdvancedWarfare:
                 for pc in self.pc_list:
                     try:
                         remote_host = pc
-                        program_path = r"C:\Program Files\Adobe\Adobe Creative Cloud\ACC\Creative Cloud.exe"
+                        program_path = ##PROGRAM PATH TO CHECK IF IT EXISTS
                         
-                        command = f'psexec \\\\{pc} -u dycd\{globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
+                        command = f'psexec \\\\{pc} -u {globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
                         result = subprocess.check_output(command,shell=True)
                         
                         if result.decode('utf-8') == 1:
                             if messagebox.askyesno(title="All files exist",message=f"It looks like the program already exists on {pc} , continue?"):
-                                installation_directory = r"start \\dycdsccm00\Sources\Packages\Adobe\Creative cloud app\setup.exe"
+                                installation_directory = ##INSTALLATION DIRECTORY OF THE PROGRAM
 
 
                                 
-                                command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                                command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                                 result = subprocess.check_output(command, shell=True)
                                 
                                 print(result.decode('utf-8'))
@@ -145,11 +145,11 @@ class AdobeAdvancedWarfare:
                             else:
                                 pass
                         else:
-                            installation_directory = r"start \\dycdsccm00\Sources\Packages\Adobe\Creative cloud app\setup.exe"
+                            installation_directory = ##IF PROGRAM DOES NOT EXIST. INSTALL FROM THIS DIRECTORY
 
 
                                 
-                            command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                            command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                             result = subprocess.check_output(command, shell=True)
                                 
                             print(result.decode('utf-8'))
@@ -158,14 +158,14 @@ class AdobeAdvancedWarfare:
                                     
                                 reports_directory = os.path.join("Reports",f"ADOBE {formatted_date}.txt")
                                 with open(reports_directory,'a') as a:
-                                    a.write(f"{pc}: Installation launched successfully!")
+                                    a.write(f"{pc}: Installation launched successfully!\n\n")
                                     
                             else:
                                 os.mkdir("Reports")
                 
                                 reports_directory = os.path.join("Reports",f"ADOBE {formatted_date}.txt")
                                 with open(reports_directory,'a') as a:
-                                    a.write(f"{pc}: Installation launched successfully!")
+                                    a.write(f"{pc}: Installation launched successfully!\n\n")
                     except Exception as er:
                         if os.path.exists("Reports"):
                             reports_directory = os.path.join("Reports",f"ADOBE {formatted_date}.txt")
@@ -257,7 +257,7 @@ class MicrosoftBlackOps:
                 for pc in self.pc_list:
                     try:
                         for location in self.ms35_list:
-                            command = f'psexec \\\\{pc} -u dycd\{globalusername} -p {globalpassword} cmd /c "if exist {location} (echo 1) else (echo 0)"'
+                            command = f'psexec \\\\{pc} -u {globalusername} -p {globalpassword} cmd /c "if exist {location} (echo 1) else (echo 0)"'
                             result = subprocess.check_output(command,shell=True)
                             
                             if result.decode('utf-8') == 1:
@@ -271,9 +271,9 @@ class MicrosoftBlackOps:
                         if all_files_exist == True:
                             if messagebox.askyesno(title="All files exist",message=f"All files seem to exist on target {pc} , continue?"):
                                 remote_host = pc
-                                program_path = "start \\\\dycdsccm00\\Sources\\Packages\\MicroSoft\\Office365\\setup.exe"
+                                program_path = ##PROGRAM INSTALLATION PATH
                                 
-                                command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{program_path}"'
+                                command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{program_path}"'
                                 result = subprocess.check_output(command, shell=True)
                                 
                                 print(result.decode('utf-8'))
@@ -283,22 +283,22 @@ class MicrosoftBlackOps:
                                     
                                     reports_directory = os.path.join("Reports",f"MS365 {formatted_date}.txt")
                                     with open(reports_directory,'a') as a:
-                                        a.write(f"{pc}: Installation launched successfully!")
+                                        a.write(f"{pc}: Installation launched successfully!\n\n")
                                     
                                 else:
                                     os.mkdir("Reports")
                 
                                     reports_directory = os.path.join("Reports",f"MS365 {formatted_date}.txt")
                                     with open(reports_directory,'a') as a:
-                                        a.write(f"{pc}: Installation launched successfully!")
+                                        a.write(f"{pc}: Installation launched successfully!\n\n")
                             else:
                                 pass
                                         
                         else:
                             remote_host = pc
-                            program_path = "start \\\\dycdsccm00\\Sources\\Packages\\MicroSoft\\Office365\\setup.exe"
+                            program_path = ##PROGRAM INSTALLATION PATH
                                 
-                            command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{program_path}"'
+                            command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{program_path}"'
                             output = subprocess.check_output(command,shell=True)
                             print(output.decode('utf-8'))
                             
@@ -307,14 +307,14 @@ class MicrosoftBlackOps:
                                     
                                 reports_directory = os.path.join("Reports",f"MS365 {formatted_date}.txt")
                                 with open(reports_directory,'a') as a:
-                                    a.write(f"{pc}: Installation launched successfully!")
+                                    a.write(f"{pc}: Installation launched successfully!\n\n")
                                     
                             else:
                                 os.mkdir("Reports")
                 
                                 reports_directory = os.path.join("Reports",f"MS365 {formatted_date}.txt")
                                 with open(reports_directory,'a') as a:
-                                    a.write(f"{pc}: Installation launched successfully!")
+                                    a.write(f"{pc}: Installation launched successfully!\n\n")
                             
                             
                     except Exception as er:
@@ -353,14 +353,14 @@ class MicrosoftBlackOps:
                     try:
                         remote_pc = pc 
                         program_path = r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office 2013\Visio 2013.lnk"
-                        command = f'psexec \\\\{pc} -u dycd\{globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
+                        command = f'psexec \\\\{pc} -u {globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
                         result = subprocess.check_output(command,shell=True)
                         
                         if result.decode('utf-8') == 1:
                             remote_host = pc
                             if messagebox.askyesno(title="All files exist",message=f"It looks like the program already exists on {pc} , continue?"):
-                                installation_directory = r"start \\dycdsccm00\Sources\Packages\MicroSoft\Visio2013std\setup.exe"
-                                command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                                installation_directory = ##INSTALLATION DIRECTORY
+                                command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                                 result = subprocess.check_output(command, shell=True)
                                 
                                 print(result.decode('utf-8'))  
@@ -381,8 +381,8 @@ class MicrosoftBlackOps:
                             else:
                                 pass
                         else:
-                            installation_directory = r"start \\dycdsccm00\Sources\Packages\MicroSoft\Visio2013std\setup.exe"
-                            command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                            installation_directory = ##INSTALLATION DIRECTORY
+                            command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                             result = subprocess.check_output(command, shell=True)
                             
                             print(result.decode('utf-8'))
@@ -436,14 +436,14 @@ class MicrosoftBlackOps:
                         remote_host = pc
                         program_path = r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office 2013\Project 2013.lnk"
                         
-                        command = f'psexec \\\\{pc} -u dycd\{globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
+                        command = f'psexec \\\\{pc} -u {globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
                         result = subprocess.check_output(command,shell=True)
                         
                         if result.decode('utf-8') == 1:
                             if messagebox.askyesno(title="All files exist",message=f"It looks like the program already exists on {pc} , continue?"):
-                                installation_directory = r"start \\dycdsccm00\Sources\Packages\MicroSoft\Project Pro 2013 SP1 32_64Bit\x64\setup.exe"
+                                installation_directory = ##INSTALLATION DIRECTORY
                                 
-                                command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                                command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                                 result = subprocess.check_output(command, shell=True)
                                 
                                 print(result.decode('utf-8'))
@@ -464,9 +464,9 @@ class MicrosoftBlackOps:
                             else:
                                 pass
                         else:
-                            installation_directory = r"start \\dycdsccm00\Sources\Packages\MicroSoft\Project Pro 2013 SP1 32_64Bit\x64\setup.exe"
+                            installation_directory = ##INSTALLATION DIRECTORY
                                 
-                            command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                            command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                             result = subprocess.check_output(command, shell=True)
                                 
                             print(result.decode('utf-8'))
@@ -518,14 +518,14 @@ class MicrosoftBlackOps:
                         remote_host = pc
                         program_path = r"C:\Users\AAbdelmoneim\AppData\Local\Microsoft\Teams\Update.exe"
                         
-                        command = f'psexec \\\\{pc} -u dycd\{globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
+                        command = f'psexec \\\\{pc} -u {globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
                         result = subprocess.check_output(command,shell=True)
                         
                         if result.decode('utf-8') == 1:
                             if messagebox.askyesno(title="All files exist",message=f"It looks like the program already exists on {pc} , continue?"):
-                                installation_directory = r"start \\dycdsccm00\Sources\Packages\MicroSoft\MS Teams\Teams_windows_x64.exe"
+                                installation_directory = ##INSTALLATION DIRECTORY
                                 
-                                command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                                command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                                 result = subprocess.check_output(command, shell=True)
                                 
                                 print(result.decode('utf-8'))
@@ -546,9 +546,9 @@ class MicrosoftBlackOps:
                             else:
                                 pass
                         else:
-                            installation_directory = r"start \\dycdsccm00\Sources\Packages\MicroSoft\MS Teams\Teams_windows_x64.exe"
+                            installation_directory = ##INSTALLATION DIRECTORY
                                 
-                            command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
+                            command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{installation_directory}"'
                             result = subprocess.check_output(command, shell=True)
                                 
                             print(result.decode('utf-8'))
@@ -740,17 +740,17 @@ class KonicaMinolta:
 
                     program_path1 = "start \\\\PINT-PRN-A01\\KonicaMinolta-BW"
                     program_path2 = "start \\\\PINT-PRN-A01\\KonicaMinolta-Color"
-                    print(f"dycd\{globalusername}")
+                    print(f"{globalusername}")
                     print(globalpassword)
                     
                     try:
                         
                         
-                        psexec_command = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{program_path1}"'
+                        psexec_command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{program_path1}"'
                         result = subprocess.check_output(psexec_command, shell=True)
                         print(result.decode('utf-8'))
                         
-                        psexec_command1 = f'psexec \\\\{remote_host} -u dycd\{globalusername} -p {globalpassword} cmd /c "{program_path2}"'
+                        psexec_command1 = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{program_path2}"'
                         result1 = subprocess.check_output(psexec_command1,shell=True)
                         print(result1.decode('utf-8'))
                     
@@ -846,7 +846,7 @@ class MainMenu:
         self.btn5 = tk.Button(self.btnframe,text = "Care Package\n(Transfer Files)",font=('arial',18),width=15,height=5,bg='green',command=self.carepackage)
         self.btn5.grid(row=1,column=1, sticky =tk.W+tk.E)
 
-        self.btn6 = tk.Button(self.btnframe,text = "DYCD Special",font=('arial',18),width=15,height=5,bg='green')
+        self.btn6 = tk.Button(self.btnframe,text = "Special",font=('arial',18),width=15,height=5,bg='green')
         self.btn6.grid(row=1,column=2, sticky =tk.W+tk.E)
         
         self.btnframe.place(relx=0.5,rely=0.5,anchor='center')
