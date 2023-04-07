@@ -738,8 +738,8 @@ class KonicaMinolta:
                 for pc in self.pc_list:
                     remote_host = pc
 
-                    program_path1 = "start \\\\PINT-PRN-A01\\KonicaMinolta-BW"
-                    program_path2 = "start \\\\PINT-PRN-A01\\KonicaMinolta-Color"
+                    program_path1 = ##PRINTER DRIVER1
+                    program_path2 = ##PRINTER DRIVER2
                     print(f"{globalusername}")
                     print(globalpassword)
                     
