@@ -72,7 +72,7 @@ class Main:
         
         def animate_gif(frame_idx):
             self.logo_label.config(image=self.frames[frame_idx])
-            self.root.after(100,animate_gif,(frame_idx+1)%len(self.frames))
+            self.root.after(10,animate_gif,(frame_idx+1)%len(self.frames))
             
         animate_gif(0)
         
