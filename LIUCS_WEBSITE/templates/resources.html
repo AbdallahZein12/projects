@@ -1,0 +1,24 @@
+{% extends "base.html" %}{% block title %}Resources{% endblock %}{% block cssdoc %}<link rel="stylesheet" href="../static/css/resources.css">{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Resources</h1>
+    <p class="subhead">Subscribe to our <a href="https://www.youtube.com/@liucsclub" style="color: red; text-decoration:underline;">YouTube</a> channel for tutorials and more !!!<br><br>Join us and get access to our discord resources available to our members. </p>
+
+</section>
+
+
+<script>
+const menu = document.querySelector('.menu')
+const close = document.querySelector('.close')
+const nav = document.querySelector('nav')
+
+menu.addEventListener('click', () => {
+    nav.classList.add('open-nav')
+})
+
+close.addEventListener('click', () => {
+    nav.classList.remove('open-nav')
+})
+</script>
+{% endblock %}
