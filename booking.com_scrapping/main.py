@@ -3,13 +3,13 @@ import time
 try:
     with Booking() as bot: 
         bot.land_first_page()
-        bot.change_currency(input("Currency (Format: U.S. Dollar)> "))
-        bot.select_place_to_go(input("Location> "))
-        bot.select_dates(check_in_date=input("Check in Date (Format: 26 July 2023)> "),check_out_date=input("Check out Date (Format: 4 September 2023)> "))
-        adults = input("Num of Adults> ")
+        bot.change_currency(input("Currency (Format: U.S. Dollar)> ").strip())
+        bot.select_place_to_go(input("Location> ").strip())
+        bot.select_dates(check_in_date=input("Check in Date (Format: 26 July 2023)> ").strip(),check_out_date=input("Check out Date (Format: 4 September 2023)> ").strip())
+        adults = input("Num of Adults> ").strip()
         children = int(input("Num of Children> "))
         if children > 0:
-            ages = [input("Age of Child (Up to 17)> ") for i in range(children)]
+            ages = [input("Age of Child (Up to 17)> ").strip() for i in range(children)]
         else:
             ages = []
                 
