@@ -1,0 +1,111 @@
+html {
+  background: url("../../assets/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+html body {
+  color: white;
+  background-color: transparent;
+  margin: 1.5em;
+  font-family: "Poppins", sans-serif;
+}
+html body section.hero {
+  color: white;
+}
+html body section.hero .hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../../assets/hero.jpg");
+  background-size: cover;
+  background-position-x: 20%;
+  background-position-y: 20%;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  animation: introLoad 2s forwards;
+  overflow: hidden;
+}
+html body section.hero .hero-text {
+  animation: moveDown 1s ease-in-out forwards;
+  opacity: 0;
+}
+html body section.hero .hero-text h1 {
+  font-size: 3rem;
+  margin-top: 1em;
+  line-height: 3.3rem;
+  font-weight: bold;
+}
+html body section.hero .hero-text .subhead {
+  font-size: 1.4rem;
+}
+html body section.hero .hero-text .down-arrow {
+  stroke: white;
+  position: absolute;
+  bottom: -20em;
+  width: 1em;
+}
+html body section.hero .hero-text .down-arrow path {
+  fill: white;
+}
+html body section.main .drop-zone {
+  height: 200px;
+  margin-top: 60vh;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+html body section.main .drop-zone.highlight {
+  border-color: #007bff;
+}
+html body section.main .drop-zone p span {
+  font-weight: bold;
+}
+html body section.main .drop-zone:hover {
+  background-color: #f9f9f9;
+}
+html body section.main .response-zone {
+  margin-top: 15vh;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  padding: 0.5em;
+  height: 500px;
+  overflow: auto;
+}
+html body section.main .response-zone .cpy-btn {
+  margin-left: 120px;
+}
+html body section.main .response-zone .response {
+  margin-top: 1vh;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+  white-space: pre;
+  overflow: auto;
+  resize: none;
+}
+
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
