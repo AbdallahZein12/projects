@@ -60,7 +60,9 @@ def home():
     
 #     return render_template("home.html",output=final_output)
 
-    
+@app.route("/more")
+def more():
+    return render_template("more.html")
 
 
 if __name__ == "__main__":

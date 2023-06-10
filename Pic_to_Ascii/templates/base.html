@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <title>{% block title %} {% endblock %}</title>
 </head>
+<div class="wrapper">
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="home">Pic2Ascii</a>
@@ -46,6 +47,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{% block script_file %} {% endblock %}"></script>
 </body>
+</div>
 <!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="container my-5"> 
   <!-- Footer -->
@@ -67,7 +69,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Products</a>
+              <a href="more" class="text-white">Products</a>
             </h6>
           </div>
           <!-- Grid column -->

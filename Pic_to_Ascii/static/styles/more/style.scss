@@ -12,6 +12,7 @@ html {
 
         
         section.hero {
+            margin-bottom: 70vh;
             color: white;
             .hero-img {
                 position: absolute;
@@ -44,8 +45,9 @@ html {
                 .down-arrow {
                     stroke: white;
                     position: absolute;
-                    bottom: -9em;
+                    bottom: -5em;
                     width: 1em;
+                    height: 5em;
     
                     path {
                         fill:white;
@@ -56,68 +58,26 @@ html {
             
             
         }
+        .more-info {
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 11em;
+                margin-bottom: 10vh;
+            }
         
-        section.main {
-            .drop-zone {
-                height: 200px;
-                margin-top: 60vh;
-                border: 2px dashed #ccc;
-                border-radius: 5px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                cursor: pointer;
-            }
-
-            .drop-zone.highlight {
-                border-color: #007bff;
-            }
-
-            
-
-            .drop-zone p span {
+            .title {
                 font-weight: bold;
+                font-size: 1.25rem;
+                color: white;
             }
-
-            .drop-zone:hover {
-                background-color: #f9f9f9;
-            }
-
-            #file-input {
-                display: none;
-            }
-            
-            .response-zone {
-                margin-top: 15vh;
-                border: 2px dashed #ccc;
-                border-radius: 5px;
-                padding: 0.5em;
-                height: 500px;
-                overflow: auto;
-                .cpy-btn {
-                    margin-left: auto;
-                    margin-right: auto;
-                    display: flex;
-                }
-                .response {
-                    margin-top: 1vh;
-                    background-color: black;
-                    color: white;
-                    width: 100%;
-                    height: 100%;
-                    border:none;
-                    white-space: pre;
-                    overflow: auto;
-                    resize: none;
-                    
-                    
-                }
-
+            .desc {
+                line-height: 1.5rem;
+                color: white;
             }
         }
-    }
-     
+    }   
 }
 
 @media only screen and (min-width: 680px) {
@@ -135,6 +95,7 @@ html {
     
             
             section.hero {
+                margin-bottom: 80vh;
                 color: white;
                 .hero-img {
                     position: absolute;
@@ -167,8 +128,9 @@ html {
                     .down-arrow {
                         stroke: white;
                         position: absolute;
-                        bottom: -20em;
+                        bottom: -5em;
                         width: 1em;
+                        height: 5em;
         
                         path {
                             fill:white;
@@ -179,72 +141,9 @@ html {
                 
                 
             }
-            
-            section.main {
-                .drop-zone {
-                    height: 200px;
-                    margin-top: 80vh;
-                    border: 2px dashed #ccc;
-                    border-radius: 5px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    cursor: pointer;
-                }
-    
-                .drop-zone.highlight {
-                    border-color: #007bff;
-                }
-    
-                
-    
-                .drop-zone p span {
-                    font-weight: bold;
-                }
-    
-                .drop-zone:hover {
-                    background-color: #f9f9f9;
-                }
-    
-                #file-input {
-                    display: none;
-                }
-                
-                .response-zone {
-                    margin-top: 15vh;
-                    border: 2px dashed #ccc;
-                    border-radius: 5px;
-                    padding: 0.5em;
-                    height: 315px;
-                    overflow: auto;
-                    .cpy-btn {
-                        display: flex;
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-                    .response {
-                        margin-top: 1vh;
-                        background-color: black;
-                        color: white;
-                        width: 100%;
-                        height: 100%;
-                        border:none;
-                        white-space: pre;
-                        overflow: auto;
-                        resize: none;
-                        
-                        
-                    }
-    
-                }
-            }
         }
-         
     }
 }
-
-
 @media only screen and (min-width: 920px) {
     html {
         background: url('../../assets/bg.jpg') no-repeat center center fixed;
@@ -252,6 +151,96 @@ html {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        body {
+            color: white;
+            background-color: transparent;
+            margin: 1.5em;
+            font-family: 'Poppins', sans-serif;
+    
+            
+            section.hero {
+                color: white;
+                height: auto;
+                width: 40%;
+                margin-bottom: 30em;
+                .hero-img {
+                    left: unset;
+                    right: 0;
+                    width: 50%;
+                    height: 42em;
+                }
+                
+    
+                .hero-text {
+                    animation: moveDown 1s ease-in-out forwards;
+                    opacity: 0;
+                    h1 {
+                        font-size: 3rem;
+                        margin-top: 1em;
+                        line-height: 3.3rem;
+                        font-weight: bold;
+                    }
+                    .subhead {
+                        font-size: 1.4rem;
+                    }
+                    .down-arrow {
+                        stroke: white;
+                        position: absolute;
+                        bottom: -5em;
+                        height: 5em;
+                        width: 1em;
+        
+                        path {
+                            fill:white;
+                        }
+                    }
+    
+                }
+            }
+            .feature {
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                gap: 3em;
+                margin-bottom: 8em;
+        
+                img {
+                    width: 25em;
+                }
+        
+                .content {
+                    text-align: right;
+                    width: 25em;
+                }
+            }
+        
+            .feature.reverse {
+                grid-template-areas: "left right";
+        
+                img {
+                    grid-area: left;
+                }
+                .content {
+                    text-align: left;
+                    width: 25em;
+                    justify-self: left;
+                }
+            }
+        
+        }
+        
+    }
+}
+@media only screen and (min-width: 1200px) {
+    html {
+        background: url('../../assets/bg.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        .wrapper {
+            width: 1200px;
+            margin: 0 auto;
+        }
         body {
             color: white;
             background-color: transparent;
@@ -296,88 +285,38 @@ html {
                     }
     
                 }
-                
-                
             }
-            
-            section.main {
-                .drop-zone {
-                    height: 200px;
-                    margin-top: 60vh;
-                    border: 2px dashed #ccc;
-                    border-radius: 5px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    cursor: pointer;
+            .feature {
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                gap: 0em;
+                // margin-bottom: 8em;
+        
+                img {
+                    width: 25em;
                 }
-    
-                .drop-zone.highlight {
-                    border-color: #007bff;
-                }
-    
-                
-    
-                .drop-zone p span {
-                    font-weight: bold;
-                }
-    
-                .drop-zone:hover {
-                    background-color: #f9f9f9;
-                }
-    
-                #file-input {
-                    display: none;
-                }
-                
-                .response-zone {
-                    margin-top: 15vh;
-                    border: 2px dashed #ccc;
-                    border-radius: 5px;
-                    padding: 0.5em;
-                    height: 315px;
-                    overflow: auto;
-                    .cpy-btn {
-                        display: flex;
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-                    .response {
-                        margin-top: 1vh;
-                        background-color: black;
-                        color: white;
-                        width: 100%;
-                        height: 100%;
-                        border:none;
-                        white-space: pre;
-                        overflow: auto;
-                        resize: none;
-                        
-                        
-                    }
-    
+        
+                .content {
+                    text-align: right;
+                    width: 25em;
                 }
             }
+        
+            .feature.reverse {
+                grid-template-areas: "left right";
+        
+                img {
+                    grid-area: left;
+                }
+                .content {
+                    text-align: left;
+                    width: 25em;
+                    justify-self: left;
+                }
+            }
+        
         }
-         
-    }
-
-}
-@media only screen and (min-width: 1200px) {
-    .wrapper {
-        width: 1200px;
-        margin: 0 auto;
-    }
-}
-
-
-@keyframes introLoad {
-    from {
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-    to {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        
     }
 }
 
@@ -391,5 +330,11 @@ html {
     }
 }
 
-
-   
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}

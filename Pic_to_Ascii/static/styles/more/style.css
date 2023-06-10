@@ -9,6 +9,7 @@ html body {
   font-family: "Poppins", sans-serif;
 }
 html body section.hero {
+  margin-bottom: 70vh;
   color: white;
 }
 html body section.hero .hero-img {
@@ -40,58 +41,28 @@ html body section.hero .hero-text .subhead {
 html body section.hero .hero-text .down-arrow {
   stroke: white;
   position: absolute;
-  bottom: -9em;
+  bottom: -5em;
   width: 1em;
+  height: 5em;
 }
 html body section.hero .hero-text .down-arrow path {
   fill: white;
 }
-html body section.main .drop-zone {
-  height: 200px;
-  margin-top: 60vh;
-  border: 2px dashed #ccc;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-}
-html body section.main .drop-zone.highlight {
-  border-color: #007bff;
-}
-html body section.main .drop-zone p span {
-  font-weight: bold;
-}
-html body section.main .drop-zone:hover {
-  background-color: #f9f9f9;
-}
-html body section.main #file-input {
-  display: none;
-}
-html body section.main .response-zone {
-  margin-top: 15vh;
-  border: 2px dashed #ccc;
-  border-radius: 5px;
-  padding: 0.5em;
-  height: 500px;
-  overflow: auto;
-}
-html body section.main .response-zone .cpy-btn {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-}
-html body section.main .response-zone .response {
-  margin-top: 1vh;
-  background-color: black;
-  color: white;
+html body .more-info img {
   width: 100%;
-  height: 100%;
-  border: none;
-  white-space: pre;
-  overflow: auto;
-  resize: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 11em;
+  margin-bottom: 10vh;
+}
+html body .more-info .title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: white;
+}
+html body .more-info .desc {
+  line-height: 1.5rem;
+  color: white;
 }
 
 @media only screen and (min-width: 680px) {
@@ -106,6 +77,7 @@ html body section.main .response-zone .response {
     font-family: "Poppins", sans-serif;
   }
   html body section.hero {
+    margin-bottom: 80vh;
     color: white;
   }
   html body section.hero .hero-img {
@@ -137,58 +109,12 @@ html body section.main .response-zone .response {
   html body section.hero .hero-text .down-arrow {
     stroke: white;
     position: absolute;
-    bottom: -20em;
+    bottom: -5em;
     width: 1em;
+    height: 5em;
   }
   html body section.hero .hero-text .down-arrow path {
     fill: white;
-  }
-  html body section.main .drop-zone {
-    height: 200px;
-    margin-top: 80vh;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-  }
-  html body section.main .drop-zone.highlight {
-    border-color: #007bff;
-  }
-  html body section.main .drop-zone p span {
-    font-weight: bold;
-  }
-  html body section.main .drop-zone:hover {
-    background-color: #f9f9f9;
-  }
-  html body section.main #file-input {
-    display: none;
-  }
-  html body section.main .response-zone {
-    margin-top: 15vh;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
-    padding: 0.5em;
-    height: 315px;
-    overflow: auto;
-  }
-  html body section.main .response-zone .cpy-btn {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  html body section.main .response-zone .response {
-    margin-top: 1vh;
-    background-color: black;
-    color: white;
-    width: 100%;
-    height: 100%;
-    border: none;
-    white-space: pre;
-    overflow: auto;
-    resize: none;
   }
 }
 @media only screen and (min-width: 920px) {
@@ -230,64 +156,118 @@ html body section.main .response-zone .response {
   html body section.hero .hero-text .down-arrow {
     stroke: white;
     position: absolute;
+    bottom: -5em;
+    height: 5em;
+    width: 1em;
+  }
+  html body section.hero .hero-text .down-arrow path {
+    fill: white;
+  }
+  html body .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3em;
+    margin-bottom: 8em;
+  }
+  html body .feature img {
+    width: 25em;
+  }
+  html body .feature .content {
+    text-align: right;
+    width: 25em;
+  }
+  html body .feature.reverse {
+    grid-template-areas: "left right";
+  }
+  html body .feature.reverse img {
+    grid-area: left;
+  }
+  html body .feature.reverse .content {
+    text-align: left;
+    width: 25em;
+    justify-self: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    background: url("../../assets/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  html .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  html body {
+    color: white;
+    background-color: transparent;
+    margin: 1.5em;
+    font-family: "Poppins", sans-serif;
+  }
+  html body section.hero {
+    color: white;
+    height: auto;
+    width: 40%;
+    margin-bottom: 30em;
+  }
+  html body section.hero .hero-img {
+    left: unset;
+    right: 0;
+    width: 50%;
+    height: 42em;
+  }
+  html body section.hero .hero-text {
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+  }
+  html body section.hero .hero-text h1 {
+    font-size: 3rem;
+    margin-top: 1em;
+    line-height: 3.3rem;
+    font-weight: bold;
+  }
+  html body section.hero .hero-text .subhead {
+    font-size: 1.4rem;
+  }
+  html body section.hero .hero-text .down-arrow {
+    stroke: white;
+    position: absolute;
     bottom: -10em;
     width: 1em;
   }
   html body section.hero .hero-text .down-arrow path {
     fill: white;
   }
-  html body section.main .drop-zone {
-    height: 200px;
-    margin-top: 60vh;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
+  html body .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0em;
   }
-  html body section.main .drop-zone.highlight {
-    border-color: #007bff;
+  html body .feature img {
+    width: 25em;
   }
-  html body section.main .drop-zone p span {
-    font-weight: bold;
+  html body .feature .content {
+    text-align: right;
+    width: 25em;
   }
-  html body section.main .drop-zone:hover {
-    background-color: #f9f9f9;
+  html body .feature.reverse {
+    grid-template-areas: "left right";
   }
-  html body section.main #file-input {
-    display: none;
+  html body .feature.reverse img {
+    grid-area: left;
   }
-  html body section.main .response-zone {
-    margin-top: 15vh;
-    border: 2px dashed #ccc;
-    border-radius: 5px;
-    padding: 0.5em;
-    height: 315px;
-    overflow: auto;
-  }
-  html body section.main .response-zone .cpy-btn {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  html body section.main .response-zone .response {
-    margin-top: 1vh;
-    background-color: black;
-    color: white;
-    width: 100%;
-    height: 100%;
-    border: none;
-    white-space: pre;
-    overflow: auto;
-    resize: none;
+  html body .feature.reverse .content {
+    text-align: left;
+    width: 25em;
+    justify-self: left;
   }
 }
-@media only screen and (min-width: 1200px) {
-  .wrapper {
-    width: 1200px;
-    margin: 0 auto;
+@keyframes moveDown {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 @keyframes introLoad {
@@ -298,14 +278,5 @@ html body section.main .response-zone .response {
   to {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-@keyframes moveDown {
-  from {
-    transform: translateY(-30px);
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */
