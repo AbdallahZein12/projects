@@ -25,7 +25,7 @@ html {
                 height: 100vh;
                 z-index: -1;
                 animation: introLoad 2s forwards;
-                overflow: hidden;
+                // overflow: hidden;
             }
             
 
@@ -44,7 +44,7 @@ html {
                 .down-arrow {
                     stroke: white;
                     position: absolute;
-                    bottom: -20em;
+                    bottom: -9em;
                     width: 1em;
     
                     path {
@@ -83,6 +83,11 @@ html {
             .drop-zone:hover {
                 background-color: #f9f9f9;
             }
+
+            #file-input {
+                display: none;
+            }
+            
             .response-zone {
                 margin-top: 15vh;
                 border: 2px dashed #ccc;
@@ -91,7 +96,9 @@ html {
                 height: 500px;
                 overflow: auto;
                 .cpy-btn {
-                    margin-left: 120px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
                 }
                 .response {
                     margin-top: 1vh;
@@ -111,6 +118,251 @@ html {
         }
     }
      
+}
+
+@media only screen and (min-width: 680px) {
+    html {
+        background: url('../../assets/bg.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        body {
+            color: white;
+            background-color: transparent;
+            margin: 1.5em;
+            font-family: 'Poppins', sans-serif;
+    
+            
+            section.hero {
+                color: white;
+                .hero-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: url('../../assets/hero.jpg');
+                    background-size: cover;
+                    background-position-x: 20%;
+                    background-position-y: 20%;
+                    width: 100%;
+                    height: 100vh;
+                    z-index: -1;
+                    animation: introLoad 2s forwards;
+                    // overflow: hidden;
+                }
+                
+    
+                .hero-text {
+                    animation: moveDown 1s ease-in-out forwards;
+                    opacity: 0;
+                    h1 {
+                        font-size: 3rem;
+                        margin-top: 1em;
+                        line-height: 3.3rem;
+                        font-weight: bold;
+                    }
+                    .subhead {
+                        font-size: 1.4rem;
+                    }
+                    .down-arrow {
+                        stroke: white;
+                        position: absolute;
+                        bottom: -20em;
+                        width: 1em;
+        
+                        path {
+                            fill:white;
+                        }
+                    }
+    
+                }
+                
+                
+            }
+            
+            section.main {
+                .drop-zone {
+                    height: 200px;
+                    margin-top: 80vh;
+                    border: 2px dashed #ccc;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    cursor: pointer;
+                }
+    
+                .drop-zone.highlight {
+                    border-color: #007bff;
+                }
+    
+                
+    
+                .drop-zone p span {
+                    font-weight: bold;
+                }
+    
+                .drop-zone:hover {
+                    background-color: #f9f9f9;
+                }
+    
+                #file-input {
+                    display: none;
+                }
+                
+                .response-zone {
+                    margin-top: 15vh;
+                    border: 2px dashed #ccc;
+                    border-radius: 5px;
+                    padding: 0.5em;
+                    height: 315px;
+                    overflow: auto;
+                    .cpy-btn {
+                        display: flex;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .response {
+                        margin-top: 1vh;
+                        background-color: black;
+                        color: white;
+                        width: 100%;
+                        height: 100%;
+                        border:none;
+                        white-space: pre;
+                        overflow: auto;
+                        resize: none;
+                        
+                        
+                    }
+    
+                }
+            }
+        }
+         
+    }
+}
+
+
+@media only screen and (min-width: 920px) {
+    html {
+        background: url('../../assets/bg.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        body {
+            color: white;
+            background-color: transparent;
+            margin: 1.5em;
+            font-family: 'Poppins', sans-serif;
+    
+            
+            section.hero {
+                color: white;
+                height: auto;
+                width: 40%;
+                margin-bottom: 30em;
+                .hero-img {
+                    left: unset;
+                    right: 0;
+                    width: 50%;
+                    height: 42em;
+                }
+                
+    
+                .hero-text {
+                    animation: moveDown 1s ease-in-out forwards;
+                    opacity: 0;
+                    h1 {
+                        font-size: 3rem;
+                        margin-top: 1em;
+                        line-height: 3.3rem;
+                        font-weight: bold;
+                    }
+                    .subhead {
+                        font-size: 1.4rem;
+                    }
+                    .down-arrow {
+                        stroke: white;
+                        position: absolute;
+                        bottom: -10em;
+                        width: 1em;
+        
+                        path {
+                            fill:white;
+                        }
+                    }
+    
+                }
+                
+                
+            }
+            
+            section.main {
+                .drop-zone {
+                    height: 200px;
+                    margin-top: 60vh;
+                    border: 2px dashed #ccc;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    cursor: pointer;
+                }
+    
+                .drop-zone.highlight {
+                    border-color: #007bff;
+                }
+    
+                
+    
+                .drop-zone p span {
+                    font-weight: bold;
+                }
+    
+                .drop-zone:hover {
+                    background-color: #f9f9f9;
+                }
+    
+                #file-input {
+                    display: none;
+                }
+                
+                .response-zone {
+                    margin-top: 15vh;
+                    border: 2px dashed #ccc;
+                    border-radius: 5px;
+                    padding: 0.5em;
+                    height: 315px;
+                    overflow: auto;
+                    .cpy-btn {
+                        display: flex;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .response {
+                        margin-top: 1vh;
+                        background-color: black;
+                        color: white;
+                        width: 100%;
+                        height: 100%;
+                        border:none;
+                        white-space: pre;
+                        overflow: auto;
+                        resize: none;
+                        
+                        
+                    }
+    
+                }
+            }
+        }
+         
+    }
+
 }
 
 

@@ -23,7 +23,6 @@ html body section.hero .hero-img {
   height: 100vh;
   z-index: -1;
   animation: introLoad 2s forwards;
-  overflow: hidden;
 }
 html body section.hero .hero-text {
   animation: moveDown 1s ease-in-out forwards;
@@ -41,7 +40,7 @@ html body section.hero .hero-text .subhead {
 html body section.hero .hero-text .down-arrow {
   stroke: white;
   position: absolute;
-  bottom: -20em;
+  bottom: -9em;
   width: 1em;
 }
 html body section.hero .hero-text .down-arrow path {
@@ -67,6 +66,9 @@ html body section.main .drop-zone p span {
 html body section.main .drop-zone:hover {
   background-color: #f9f9f9;
 }
+html body section.main #file-input {
+  display: none;
+}
 html body section.main .response-zone {
   margin-top: 15vh;
   border: 2px dashed #ccc;
@@ -76,7 +78,9 @@ html body section.main .response-zone {
   overflow: auto;
 }
 html body section.main .response-zone .cpy-btn {
-  margin-left: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
 }
 html body section.main .response-zone .response {
   margin-top: 1vh;
@@ -90,6 +94,196 @@ html body section.main .response-zone .response {
   resize: none;
 }
 
+@media only screen and (min-width: 680px) {
+  html {
+    background: url("../../assets/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  html body {
+    color: white;
+    background-color: transparent;
+    margin: 1.5em;
+    font-family: "Poppins", sans-serif;
+  }
+  html body section.hero {
+    color: white;
+  }
+  html body section.hero .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../../assets/hero.jpg");
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+  }
+  html body section.hero .hero-text {
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+  }
+  html body section.hero .hero-text h1 {
+    font-size: 3rem;
+    margin-top: 1em;
+    line-height: 3.3rem;
+    font-weight: bold;
+  }
+  html body section.hero .hero-text .subhead {
+    font-size: 1.4rem;
+  }
+  html body section.hero .hero-text .down-arrow {
+    stroke: white;
+    position: absolute;
+    bottom: -20em;
+    width: 1em;
+  }
+  html body section.hero .hero-text .down-arrow path {
+    fill: white;
+  }
+  html body section.main .drop-zone {
+    height: 200px;
+    margin-top: 80vh;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  html body section.main .drop-zone.highlight {
+    border-color: #007bff;
+  }
+  html body section.main .drop-zone p span {
+    font-weight: bold;
+  }
+  html body section.main .drop-zone:hover {
+    background-color: #f9f9f9;
+  }
+  html body section.main #file-input {
+    display: none;
+  }
+  html body section.main .response-zone {
+    margin-top: 15vh;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 0.5em;
+    height: 315px;
+    overflow: auto;
+  }
+  html body section.main .response-zone .cpy-btn {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html body section.main .response-zone .response {
+    margin-top: 1vh;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border: none;
+    white-space: pre;
+    overflow: auto;
+    resize: none;
+  }
+}
+@media only screen and (min-width: 920px) {
+  html {
+    background: url("../../assets/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  html body {
+    color: white;
+    background-color: transparent;
+    margin: 1.5em;
+    font-family: "Poppins", sans-serif;
+  }
+  html body section.hero {
+    color: white;
+    height: auto;
+    width: 40%;
+    margin-bottom: 30em;
+  }
+  html body section.hero .hero-img {
+    left: unset;
+    right: 0;
+    width: 50%;
+    height: 42em;
+  }
+  html body section.hero .hero-text {
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+  }
+  html body section.hero .hero-text h1 {
+    font-size: 3rem;
+    margin-top: 1em;
+    line-height: 3.3rem;
+    font-weight: bold;
+  }
+  html body section.hero .hero-text .subhead {
+    font-size: 1.4rem;
+  }
+  html body section.hero .hero-text .down-arrow {
+    stroke: white;
+    position: absolute;
+    bottom: -10em;
+    width: 1em;
+  }
+  html body section.hero .hero-text .down-arrow path {
+    fill: white;
+  }
+  html body section.main .drop-zone {
+    height: 200px;
+    margin-top: 60vh;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  html body section.main .drop-zone.highlight {
+    border-color: #007bff;
+  }
+  html body section.main .drop-zone p span {
+    font-weight: bold;
+  }
+  html body section.main .drop-zone:hover {
+    background-color: #f9f9f9;
+  }
+  html body section.main #file-input {
+    display: none;
+  }
+  html body section.main .response-zone {
+    margin-top: 15vh;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 0.5em;
+    height: 315px;
+    overflow: auto;
+  }
+  html body section.main .response-zone .cpy-btn {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html body section.main .response-zone .response {
+    margin-top: 1vh;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border: none;
+    white-space: pre;
+    overflow: auto;
+    resize: none;
+  }
+}
 @keyframes introLoad {
   from {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
