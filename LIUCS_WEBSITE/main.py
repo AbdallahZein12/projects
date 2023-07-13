@@ -9,6 +9,7 @@ email_password = os.environ.get("LIUCSPASS")
 
 app = Flask(__name__)
 
+@app.route("/",methods=["POST","GET"])
 @app.route("/home", methods=["POST","GET"])
 def home():
     if request.method == "POST":
