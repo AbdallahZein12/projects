@@ -9,6 +9,11 @@ app = Flask(__name__)
 def index():
     return render_template("index.html", launches=launches)
 
+@app.template_filter("date_only")
+def date_only_filter(s):
+    date_object = datetime.strptime(s, "%Y-%m-%dT%H:%M:%S.%fZ")
+    return date_object.date()
+
 
 def fetch_spacex_launches():
     url = "https://api.spacexdata.com/v4/launches"
