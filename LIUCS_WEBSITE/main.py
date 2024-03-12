@@ -5,20 +5,21 @@ import ssl
 import smtplib
 
 email_sender = "longislanducs@gmail.com"
-email_password = os.environ.get("LIUCSPASS")
+email_password = os.getenv("LIUCSPASS")
 
 app = Flask(__name__)
 
-@app.route("/",methods=["POST","GET"])
-@app.route("/home", methods=["POST","GET"])
+
+@app.route("/", methods=["POST", "GET"])
+@app.route("/home", methods=["POST", "GET"])
 def home():
-    if request.method == "POST":
-        try:
-            email_receiver = request.form["email"]
-            name = email_receiver.split("@")[0]
-            
-            subject = "Invitation to LIUCS!"
-            body = f""" Hello {name}!
+  if request.method == "POST":
+    try:
+      email_receiver = request.form["email"]
+      name = email_receiver.split("@")[0]
+
+      subject = "Invitation to LIUCS!"
+      body = f""" Hello {name}!
             
             Thank you for your interest in joining us! Your invitation link is attached to this email below.
 
@@ -36,35 +37,36 @@ def home():
             
             Passionately from LIUCS & ZeinDev 
             """
-            
-            em = EmailMessage()
-            em['From'] = email_sender
-            em['To'] = email_receiver
-            em['Subject'] = subject
-            em.set_content(body)
-            context = ssl.create_default_context()
-            
-            with smtplib.SMTP_SSL('smtp.gmail.com', 465,context=context) as smtp:
-                smtp.login(email_sender,email_password)
-                smtp.sendmail(email_sender,email_receiver, em.as_string())
-            
-            Success = "Invitation was sent successfully!"
-        except Exception as er:
-            Success = f"Error: {er}"
-        
-        return render_template("index.html")
-    else:
-        return render_template("index.html")
 
-@app.route("/about",methods=["POST","GET"])
+      em = EmailMessage()
+      em['From'] = email_sender
+      em['To'] = email_receiver
+      em['Subject'] = subject
+      em.set_content(body)
+      context = ssl.create_default_context()
+
+      with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+      Success = "Invitation was sent successfully!"
+    except Exception as er:
+      Success = f"Error: {er}"
+
+    return render_template("index.html")
+  else:
+    return render_template("index.html")
+
+
+@app.route("/about", methods=["POST", "GET"])
 def about():
-    if request.method == "POST":
-        try:
-            email_receiver = request.form["email"]
-            name = email_receiver.split("@")[0]
-            
-            subject = "Invitation to LIUCS!"
-            body = f""" Hello {name}!
+  if request.method == "POST":
+    try:
+      email_receiver = request.form["email"]
+      name = email_receiver.split("@")[0]
+
+      subject = "Invitation to LIUCS!"
+      body = f""" Hello {name}!
             
             Thank you for your interest in joining us! Your invitation link is attached to this email below.
 
@@ -82,35 +84,36 @@ def about():
             
             Passionately from LIUCS & ZeinDev 
             """
-            
-            em = EmailMessage()
-            em['From'] = email_sender
-            em['To'] = email_receiver
-            em['Subject'] = subject
-            em.set_content(body)
-            context = ssl.create_default_context()
-            
-            with smtplib.SMTP_SSL('smtp.gmail.com', 465,context=context) as smtp:
-                smtp.login(email_sender,email_password)
-                smtp.sendmail(email_sender,email_receiver, em.as_string())
-            
-            Success = "Invitation was sent successfully!"
-        except Exception as er:
-            Success = f"Error: {er}"
-        
-        return render_template("about.html")
-    else:
-        return render_template("about.html")
 
-@app.route("/calendar",methods=["POST","GET"])
+      em = EmailMessage()
+      em['From'] = email_sender
+      em['To'] = email_receiver
+      em['Subject'] = subject
+      em.set_content(body)
+      context = ssl.create_default_context()
+
+      with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+      Success = "Invitation was sent successfully!"
+    except Exception as er:
+      Success = f"Error: {er}"
+
+    return render_template("about.html")
+  else:
+    return render_template("about.html")
+
+
+@app.route("/calendar", methods=["POST", "GET"])
 def calendar():
-    if request.method == "POST":
-        try:
-            email_receiver = request.form["email"]
-            name = email_receiver.split("@")[0]
-            
-            subject = "Invitation to LIUCS!"
-            body = f""" Hello {name}!
+  if request.method == "POST":
+    try:
+      email_receiver = request.form["email"]
+      name = email_receiver.split("@")[0]
+
+      subject = "Invitation to LIUCS!"
+      body = f""" Hello {name}!
             
             Thank you for your interest in joining us! Your invitation link is attached to this email below.
 
@@ -128,35 +131,36 @@ def calendar():
             
             Passionately from LIUCS & ZeinDev 
             """
-            
-            em = EmailMessage()
-            em['From'] = email_sender
-            em['To'] = email_receiver
-            em['Subject'] = subject
-            em.set_content(body)
-            context = ssl.create_default_context()
-            
-            with smtplib.SMTP_SSL('smtp.gmail.com', 465,context=context) as smtp:
-                smtp.login(email_sender,email_password)
-                smtp.sendmail(email_sender,email_receiver, em.as_string())
-            
-            Success = "Invitation was sent successfully!"
-        except Exception as er:
-            Success = f"Error: {er}"
-        
-        return render_template("calendar.html")
-    else:
-        return render_template("calendar.html")
 
-@app.route("/contributions",methods=["POST","GET"])
+      em = EmailMessage()
+      em['From'] = email_sender
+      em['To'] = email_receiver
+      em['Subject'] = subject
+      em.set_content(body)
+      context = ssl.create_default_context()
+
+      with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+      Success = "Invitation was sent successfully!"
+    except Exception as er:
+      Success = f"Error: {er}"
+
+    return render_template("calendar.html")
+  else:
+    return render_template("calendar.html")
+
+
+@app.route("/contributions", methods=["POST", "GET"])
 def contributions():
-    if request.method == "POST":
-        try:
-            email_receiver = request.form["email"]
-            name = email_receiver.split("@")[0]
-            
-            subject = "Invitation to LIUCS!"
-            body = f""" Hello {name}!
+  if request.method == "POST":
+    try:
+      email_receiver = request.form["email"]
+      name = email_receiver.split("@")[0]
+
+      subject = "Invitation to LIUCS!"
+      body = f""" Hello {name}!
             
             Thank you for your interest in joining us! Your invitation link is attached to this email below.
 
@@ -174,35 +178,36 @@ def contributions():
             
             Passionately from LIUCS & ZeinDev 
             """
-            
-            em = EmailMessage()
-            em['From'] = email_sender
-            em['To'] = email_receiver
-            em['Subject'] = subject
-            em.set_content(body)
-            context = ssl.create_default_context()
-            
-            with smtplib.SMTP_SSL('smtp.gmail.com', 465,context=context) as smtp:
-                smtp.login(email_sender,email_password)
-                smtp.sendmail(email_sender,email_receiver, em.as_string())
-            
-            Success = "Invitation was sent successfully!"
-        except Exception as er:
-            Success = f"Error: {er}"
-        
-        return render_template("contributions.html")
-    else:
-        return render_template("contributions.html")
 
-@app.route("/resources",methods=["POST","GET"])
+      em = EmailMessage()
+      em['From'] = email_sender
+      em['To'] = email_receiver
+      em['Subject'] = subject
+      em.set_content(body)
+      context = ssl.create_default_context()
+
+      with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+      Success = "Invitation was sent successfully!"
+    except Exception as er:
+      Success = f"Error: {er}"
+
+    return render_template("contributions.html")
+  else:
+    return render_template("contributions.html")
+
+
+@app.route("/resources", methods=["POST", "GET"])
 def resources():
-    if request.method == "POST":
-        try:
-            email_receiver = request.form["email"]
-            name = email_receiver.split("@")[0]
-            
-            subject = "Invitation to LIUCS!"
-            body = f""" Hello {name}!
+  if request.method == "POST":
+    try:
+      email_receiver = request.form["email"]
+      name = email_receiver.split("@")[0]
+
+      subject = "Invitation to LIUCS!"
+      body = f""" Hello {name}!
             
             Thank you for your interest in joining us! Your invitation link is attached to this email below.
 
@@ -220,25 +225,26 @@ def resources():
             
             Passionately from LIUCS & ZeinDev 
             """
-            
-            em = EmailMessage()
-            em['From'] = email_sender
-            em['To'] = email_receiver
-            em['Subject'] = subject
-            em.set_content(body)
-            context = ssl.create_default_context()
-            
-            with smtplib.SMTP_SSL('smtp.gmail.com', 465,context=context) as smtp:
-                smtp.login(email_sender,email_password)
-                smtp.sendmail(email_sender,email_receiver, em.as_string())
-            
-            Success = "Invitation was sent successfully!"
-        except Exception as er:
-            Success = f"Error: {er}"
-        
-        return render_template("resources.html")
-    else:
-        return render_template("resources.html")
+
+      em = EmailMessage()
+      em['From'] = email_sender
+      em['To'] = email_receiver
+      em['Subject'] = subject
+      em.set_content(body)
+      context = ssl.create_default_context()
+
+      with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_receiver, em.as_string())
+
+      Success = "Invitation was sent successfully!"
+    except Exception as er:
+      Success = f"Error: {er}"
+
+    return render_template("resources.html")
+  else:
+    return render_template("resources.html")
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+  app.run(host='0.0.0.0', port=80, debug=True)
