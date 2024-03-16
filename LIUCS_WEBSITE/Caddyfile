@@ -2,6 +2,18 @@
     admin off
 }
 
-http://67.250.88.13 {
+138.199.35.116:8000 {
+    reverse_proxy localhost:8000
+}
+
+138.199.35.117:8001 {
+    reverse_proxy localhost:8000
+}
+
+138.199.35.118:8002 {
+    reverse_proxy localhost:8000
+}
+
+138.199.35.119:8003 {
     reverse_proxy localhost:8000
 }
