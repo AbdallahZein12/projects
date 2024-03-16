@@ -2,6 +2,6 @@
     admin off
 }
 
-http://138.199.35.116 {
+http://67.250.88.13 {
     reverse_proxy localhost:8000
 }
