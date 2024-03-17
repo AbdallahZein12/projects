@@ -245,4 +245,3 @@ def resources():
   else:
     return render_template("resources.html")
 
-

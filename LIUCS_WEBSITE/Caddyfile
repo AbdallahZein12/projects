@@ -1,7 +1,7 @@
-www.liucs.us.to {
-    redir https://liucs.us.to{uri}
+www.liucs.crabdance.com {
+    redir https://liucs.crabdance.com{uri}
 }
 
-liucs.us.to {
+liucs.crabdance.com {
     reverse_proxy localhost:8000
 }
