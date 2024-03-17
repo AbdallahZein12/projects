@@ -1,7 +1,0 @@
-www.liucs.crabdance.com {
-    redir https://liucs.crabdance.com{uri}
-}
-
-liucs.crabdance.com {
-    reverse_proxy localhost:8000
-}
