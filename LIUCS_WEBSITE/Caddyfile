@@ -1,3 +1,7 @@
-http://67.250.88.13 {
+www.liucs.us.to {
+    redir https://liucs.us.to{uri}
+}
+
+liucs.us.to {
     reverse_proxy localhost:8000
 }
