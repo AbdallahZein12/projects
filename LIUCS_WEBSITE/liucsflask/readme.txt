@@ -4,4 +4,4 @@
 - I used jenga template and many libraries than include smtplib to send automatic emails.
 - Website is 100% responsive and is viewed differently from different devices  
 
-Hosted @  https://liucs.liu-cscs.repl.co/home
+Hosted @  https://liucs.liucscs.us
