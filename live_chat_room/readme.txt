@@ -5,4 +5,4 @@ Live Chat Website
 - I used HTML/CSS Python, JS, and the Jinja template to implement python code in my Html. 
 - Managed POST and GET responses and used the Flask Framework 
 
-Website hosted @ https://livechat.liu-cscs.repl.co/
+Website hosted @ https://livechat.liucscs.us
