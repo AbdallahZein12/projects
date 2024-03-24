@@ -2,9 +2,10 @@ from flask import Flask, render_template, request, session, redirect, url_for #N
 from flask_socketio import  join_room, leave_room, send, SocketIO 
 import random #to generate random room codes
 from string import ascii_uppercase #all the available characters to choose from when I generate a code for a room
+import os 
 
 app = Flask(__name__) #initialized flask application
-app.config["SECRET_KEY"] = "Aa4963490$$" #configs for flask app
+app.config["SECRET_KEY"] = os.getenv("FLASK_CHAT_WEBSITE") #configs for flask app
 socketio = SocketIO(app) #socketio integration 
 
 rooms = {
