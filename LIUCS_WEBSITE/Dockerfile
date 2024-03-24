@@ -1,10 +1,12 @@
 FROM caddy:latest
 
+ENV LIUCSPASS=blkdkysshpubicdl
+
 WORKDIR /app
 
 COPY Caddyfile /etc/caddy/Caddyfile
 
-EXPOSE 80
+EXPOSE 8001
 
 RUN apk --no-cache add python3 py3-pip && \
     pip3 install --upgrade pip setuptools && \
@@ -18,7 +20,7 @@ COPY liucsflask /app
 
 RUN pip3 install --no-cache-dir Flask gunicorn
 
-EXPOSE 8000
+EXPOSE 8001
 
-CMD ["bash", "-c", "gunicorn -b 0.0.0.0:8000 main:app & caddy run --config /etc/caddy/Caddyfile"]
+CMD ["bash", "-c", "gunicorn -b 0.0.0.0:8001 main:app & caddy run --config /etc/caddy/Caddyfile"]
 

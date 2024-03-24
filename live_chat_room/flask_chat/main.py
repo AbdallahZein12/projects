@@ -106,6 +106,4 @@ def disconnect():
             
             
 
-if __name__ == "__main__":
-    socketio.run(app, debug=True) #enabling debug so any change to the web server that does not break any of the code will automatically refresh
 
