@@ -69,5 +69,4 @@ def more():
 def underconstruction():
     return "<img src='https://kidsarefrompluto.files.wordpress.com/2012/08/fr.jpg?w=584' style='position: absolute; top:0; bottom:0; left:0; right:0; margin:auto;'>"
 
-if __name__ == "__main__":
-    app.run(debug=True)
+

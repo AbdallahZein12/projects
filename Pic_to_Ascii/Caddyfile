@@ -1,0 +1,3 @@
+http://pic2ascii.liucscs.us {
+    reverse_proxy localhost:8000
+}
