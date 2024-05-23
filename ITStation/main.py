@@ -113,7 +113,7 @@ class AdobeAdvancedWarfare:
                 for pc in self.pc_list:
                     try:
                         remote_host = pc
-                        program_path = ##PROGRAM PATH TO CHECK IF IT EXISTS
+                        # program_path = ##PROGRAM PATH TO CHECK IF IT EXISTS
                         
                         command = f'psexec \\\\{pc} -u {globalusername} -p {globalpassword} cmd /c "if exist {program_path} (echo 1) else (echo 0)"'
                         result = subprocess.check_output(command,shell=True)
@@ -271,7 +271,7 @@ class MicrosoftBlackOps:
                         if all_files_exist == True:
                             if messagebox.askyesno(title="All files exist",message=f"All files seem to exist on target {pc} , continue?"):
                                 remote_host = pc
-                                program_path = ##PROGRAM INSTALLATION PATH
+                                # program_path = ##PROGRAM INSTALLATION PATH
                                 
                                 command = f'psexec \\\\{remote_host} -u {globalusername} -p {globalpassword} cmd /c "{program_path}"'
                                 result = subprocess.check_output(command, shell=True)
@@ -738,8 +738,8 @@ class KonicaMinolta:
                 for pc in self.pc_list:
                     remote_host = pc
 
-                    program_path1 = ##PRINTER DRIVER1
-                    program_path2 = ##PRINTER DRIVER2
+                    # program_path1 = PRINTER DRIVER1
+                    # program_path2 = PRINTER DRIVER2
                     print(f"{globalusername}")
                     print(globalpassword)
                     
