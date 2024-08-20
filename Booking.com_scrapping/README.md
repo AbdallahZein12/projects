@@ -16,5 +16,4 @@ It allows user input and customization through:
 
 ## Video Demo
 
-
-<iframe src="https://giphy.com/embed/N5wt960lQFr4TNOrFh" width="480" height="269" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/N5wt960lQFr4TNOrFh">via GIPHY</a></p>
+![DemoVid](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXJtc2t2MzE1ajN0NzU2cHJlcHhoMDh2Z3U4Y3Nid3g2enFjd3plbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/N5wt960lQFr4TNOrFh/giphy.gif)
