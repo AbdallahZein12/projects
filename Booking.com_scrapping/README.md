@@ -16,4 +16,4 @@ It allows user input and customization through:
 
 ## Video Demo
 
-![DemoVid](https://imgur.com/a/dRPNHG5.gif)
+![DemoVid](https://imgur.com/a/dRPNHG5)
