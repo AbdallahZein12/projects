@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}PostPilot{% endblock %}
+{% block css_file %}{{ url_for('static',filename='styles/home/style.css') }}{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Auto-Pilot Your Social Media Takeoff!</h1>
+        <p class="subhead">With PostPilot as your co-pilot, scheduling and managing your social media posts is as smooth as cruising at 30,000 feet. Set your course, and let us handle the rest—ensuring your content lands at the perfect time, every time. Ready for takeoff?</p>
+        <svg class="down-arrow" viewBox="0 0 16 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.29289 131.707C7.68341 132.098 8.31658 132.098 8.7071 131.707L15.0711 125.343C15.4616 124.953 15.4616 124.319 15.0711 123.929C14.6805 123.538 14.0474 123.538 13.6568 123.929L7.99999 129.586L2.34314 123.929C1.95262 123.538 1.31945 123.538 0.928927 123.929C0.538402 124.319 0.538402 124.953 0.928927 125.343L7.29289 131.707ZM7 -4.37114e-08L6.99999 131L8.99999 131L9 4.37114e-08L7 -4.37114e-08Z" fill="black"/>
+        </svg>
+    </section>
+    <section class="more-info">
+        <div class="feature">
+            <div class="content">
+                <p class="title">All in One</p>
+                <p class="desc">Effortlessly schedule your content for Facebook, Instagram, Threads, X (Twitter), LinkedIn, Pinterest, TikTok, YouTube, and let PostPilot handle the automatic sharing for you.</p>
+            </div>
+            <img src="../../static/assets/socialmedia.png" alt="Picture of different social media platforms">
+        </div>
+        <div class="feature reverse">
+            <div class="content">
+                <p class="title">Data Informed Decisions</p>
+                <p class="desc">Harness the power of analytics with PostPilot to guide your social media strategy. By analyzing performance metrics, you can make smarter, data-driven decisions that elevate your content and maximize engagement. Transform insights into action and watch your results take flight.</p>
+            </div>
+            <img src="../../static/assets/data.jpg" alt="Picture of data interconnected across the globe">
+        </div>
+        <div class="feature">
+            <div class="content">
+                <p class="title">Stay on Track, Even When You Kick Back</p>
+                <p class="desc">With PostPilot, your social media stays on course, even when you’re off the grid. Schedule your posts in advance and relax, knowing your brand is active and seen, day and night, without missing a beat.</p>
+            </div>
+            <img src="../../static/assets/pilot.jpg" alt="Picture of futuristic pilot">
+        </div>
+    </section>
+{% endblock %}
