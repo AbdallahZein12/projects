@@ -16,4 +16,4 @@ It allows user input and customization through:
 
 ## Video Demo
 
-![viddemo](https://imgur.com/zo4eB0i.gif)
+![DemoVid](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXJtc2t2MzE1ajN0NzU2cHJlcHhoMDh2Z3U4Y3Nid3g2enFjd3plbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/N5wt960lQFr4TNOrFh/giphy.gif)
