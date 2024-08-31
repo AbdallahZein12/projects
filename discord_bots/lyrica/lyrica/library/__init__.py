@@ -1,1 +1,2 @@
 from .youtube import youtube_lookup, youtube_player
+from .lyr_funcs import lyrica_start,lyrica_look,lyrica_play,lyrica_pause,lyrica_add,lyrica_clear,lyrica_end,lyrica_leave,lyrica_next,lyrica_resume,lyrica_session,check_voice

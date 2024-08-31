@@ -5,7 +5,7 @@ import ffmpeg
 import subprocess
 from googleapiclient.discovery import build
 import os 
-
+import isodate
 
 def youtube_player(youtube_url):  
     yt = YouTube(youtube_url)
@@ -43,8 +43,15 @@ def youtube_lookup(keywords, max_results=10):
         maxResults = max_results
     )
     response = request.execute()
+    video_ids = [item['id']['videoId'] for item in response['items']]
+    video_requests = youtube_data.videos().list(
+        part='contentDetails',
+        id=','.join(video_ids)
+    )
+    video_response = video_requests.execute()
+    video_durations = [item['contentDetails']['duration'] for item in video_response['items']]
     
-    return {x+1:{'title':i['snippet']['title'],'author':i['snippet']['channelTitle'],'url':f"https://www.youtube.com/watch?v={i['id']['videoId']}"}for x,i in enumerate(response['items'])} 
+    return {x+1:{'title':i['snippet']['title'],'author':i['snippet']['channelTitle'],'length':str(isodate.parse_duration(video_durations[x])), 'url':f"https://www.youtube.com/watch?v={i['id']['videoId']}"}for x,i in enumerate(response['items'])} 
 
     # for item in response['items']:
     #     title = item['snippet']['title']
