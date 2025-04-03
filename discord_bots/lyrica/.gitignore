@@ -1,3 +1,5 @@
 /env
 /lyrica/__pycache__
 /lyrica/library/__pycache__
+.env
+service-account-key.json

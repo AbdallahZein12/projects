@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        - LYRICA_BOT=${LYRICA_BOT}
+        - LYRICA_YT=${LYRICA_YT}
+    environment:
+      - LYRICA_BOT=${LYRICA_BOT}
+      - LYRICA_YT=${LYRICA_YT}
