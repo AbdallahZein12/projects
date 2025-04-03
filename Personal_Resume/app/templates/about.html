@@ -1,0 +1,43 @@
+{% extends "index.html" %}{% block title %}About{% endblock %}{% block cssdoc %}<link rel="stylesheet" href="../static/css/about.css">{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Mission Statement</h1>
+    <p class="subhead">A launchpad for passionate learners to take their skillset outside of the classroom to the next level. A community of doers who are not afraid to learn from their mistakes</p>
+    <svg class="down-arrow" viewBox="0 0 16 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.29289 131.707C7.68341 132.098 8.31658 132.098 8.7071 131.707L15.0711 125.343C15.4616 124.953 15.4616 124.319 15.0711 123.929C14.6805 123.538 14.0474 123.538 13.6568 123.929L7.99999 129.586L2.34314 123.929C1.95262 123.538 1.31945 123.538 0.928927 123.929C0.538402 124.319 0.538402 124.953 0.928927 125.343L7.29289 131.707ZM7 -4.37114e-08L6.99999 131L8.99999 131L9 4.37114e-08L7 -4.37114e-08Z" fill="black"/>
+    </svg>
+</section>
+<section class="more-info">
+    <div class="feature">
+        <div class="content">
+            <p class="title">Professor Christopher League</p>
+            <p class="desc">Our club is Overseen by Prof. Christopher League. Professor League is dedicated to making software development more secure, convenient and fun. He collects programming languages, studies next-generation features and helps students to comprehend the foundations of computing. Professor League contributes to various free and open-source software projects.<br>Find him at: christopher.league@liu.edu</p>
+        </div>
+        <img style="height:121px; width:102px;" src="../static/assets/ChrisLeague.jpg" alt="Picture Of Professor Christopher League">
+    </div>
+    <div class="content">
+        <p class="title">E-Board</p>
+        <ul style="color: white; font-size:0.8rem;">
+            <li >President: Abdallah Abdelmonein (ZeinDev) - - abdallah.abdelmoneim@my.liu.edu</li>
+            <li>Vice President: Ishan Islam - - ishan.islam@my.liu.edu</li>
+            <li>Director Of Social Media: Yousseff Saleh</li>
+            <li>Director Of Membership: Edwin Berrouet</li>
+        </ul>
+    </div>
+    
+
+</section>
+<script>
+    const menu = document.querySelector('.menu')
+    const close = document.querySelector('.close')
+    const nav = document.querySelector('nav')
+
+    menu.addEventListener('click', () => {
+        nav.classList.add('open-nav')
+    })
+
+    close.addEventListener('click', () => {
+        nav.classList.remove('open-nav')
+    })
+</script>
+{% endblock %}
