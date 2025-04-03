@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% block title %}Calendar{% endblock %}
+{% block cssdoc %}<link rel="stylesheet" href="../static/css/calendar.css">{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Calendar</h1>
+   
+</section>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23616161&ctz=America%2FNew_York&showDate=1&showTitle=0&showCalendars=1&src=MDNjMGQxNzQ4ZWNkNjMzNjViN2U2ZGE0MmY5YzNhZDI3NWUzNmI5MTBjYWE0MTVjY2MzNzc1ZDM4NDJhMjI1NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23009688&color=%230B8043" style="border-width:0"  frameborder="0" scrolling="yes"></iframe>
+<script>
+    const menu = document.querySelector('.menu')
+    const close = document.querySelector('.close')
+    const nav = document.querySelector('nav')
+
+    menu.addEventListener('click', () => {
+        nav.classList.add('open-nav')
+    })
+
+    close.addEventListener('click', () => {
+        nav.classList.remove('open-nav')
+    })
+</script>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}{% block title %}Home{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Hi!</h1>
+        <p class="subhead">I am Abdallah! A Computer Science Junior at Long Island University and a passionate programmer with elite skills! I love Elon Musk and Bill Gates and find great inspiration from Steven Jobs</p>
+        <svg class="down-arrow" viewBox="0 0 16 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.29289 131.707C7.68341 132.098 8.31658 132.098 8.7071 131.707L15.0711 125.343C15.4616 124.953 15.4616 124.319 15.0711 123.929C14.6805 123.538 14.0474 123.538 13.6568 123.929L7.99999 129.586L2.34314 123.929C1.95262 123.538 1.31945 123.538 0.928927 123.929C0.538402 124.319 0.538402 124.953 0.928927 125.343L7.29289 131.707ZM7 -4.37114e-08L6.99999 131L8.99999 131L9 4.37114e-08L7 -4.37114e-08Z" fill="black"/>
+        </svg>
+            
+    </section>
+    <section class="more-info">
+        <div class="feature">
+            <div class="content">
+                <p class="title">My Education</p>
+                <p class="desc">LIU has been my dream school since I was a child and I am proud to be a rising computer science junior learning from some of the most astound professors</p>
+            </div>
+            <img src="../static/assets/mask.jpg" alt="Futuristic Woman With Mask">
+        </div>
+        <div class="feature reverse">
+            <div class="content">
+                <p class="title">Experience</p>
+                <p class="desc">- Advanced Mathematics in Pharmacitical Purchasing (Walgreens cashier): Provided amazing customer service and walgreens memberships</p>
+                <p class="desc">- Aviation Mechanic: Earned airframe and powerplant licenses from Aviation High School</p>
+                <p class="desc">- LIU CS club president: Over 1000 members</p>
+
+            </div>
+            <img src="../static/assets/desk.jpg" alt="Man Using Futuristic Computer">
+        </div>
+        <div class="feature">
+            <div class="content">
+                <p class="title">Contact Me!</p>
+                <p class="desc">Send me an email @ abdallah.abdelmoneim@my.liu.edu and I might get back to you!</p>
+            </div>
+            <img src="../static/assets/amazing.jpeg" alt="Futuristic City">
+        </div>
+
+    </section>
+    </div>
+
+    <script>
+    const menu = document.querySelector('.menu')
+    const close = document.querySelector('.close')
+    const nav = document.querySelector('nav')
+
+    menu.addEventListener('click', () => {
+        nav.classList.add('open-nav')
+    })
+
+    close.addEventListener('click', () => {
+        nav.classList.remove('open-nav')
+    })
+    </script>
+{% endblock %}
+
