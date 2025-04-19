@@ -1,0 +1,90 @@
+{% extends "index.html" %}{% block title %}About{% endblock %}{% block cssdoc %}<link rel="stylesheet" href="../static/css/about.css">{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Upload here!</h1>
+    <p class="subhead">Very safe!!</p>
+    <svg class="down-arrow" viewBox="0 0 16 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.29289 131.707C7.68341 132.098 8.31658 132.098 8.7071 131.707L15.0711 125.343C15.4616 124.953 15.4616 124.319 15.0711 123.929C14.6805 123.538 14.0474 123.538 13.6568 123.929L7.99999 129.586L2.34314 123.929C1.95262 123.538 1.31945 123.538 0.928927 123.929C0.538402 124.319 0.538402 124.953 0.928927 125.343L7.29289 131.707ZM7 -4.37114e-08L6.99999 131L8.99999 131L9 4.37114e-08L7 -4.37114e-08Z" fill="black"/>
+    </svg>
+</section>
+<section class="more-info">
+<head>
+  <title>Image to ASCII Art</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #eee; padding: 2rem; }
+    pre { background: #222; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    .copy-btn {
+      margin-top: 1rem;
+      background: #444;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .copy-btn:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Upload an Image to Generate ASCII Art</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" required>
+    <button type="submit">Generate ASCII</button>
+  </form>
+
+  {% if output %}
+    <h2>🖼️ ASCII Output:</h2>
+    <pre id="asciiBox">{{ output }}</pre>
+    <button class="copy-btn" onclick="copyToClipboard()">📋 Copy ASCII</button>
+  {% endif %}
+
+  <script>
+    function copyToClipboard() {
+      const ascii = document.getElementById("asciiBox").innerText;
+      navigator.clipboard.writeText(ascii).then(() => {
+        alert("Copied to clipboard!");
+      });
+    }
+  </script>
+
+
+    
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+</section>
+<script>
+    const menu = document.querySelector('.menu')
+    const close = document.querySelector('.close')
+    const nav = document.querySelector('nav')
+
+    menu.addEventListener('click', () => {
+        nav.classList.add('open-nav')
+    })
+
+    close.addEventListener('click', () => {
+        nav.classList.remove('open-nav')
+    })
+</script>
+{% endblock %}
