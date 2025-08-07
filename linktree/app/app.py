@@ -19,5 +19,3 @@ profile = {
 @app.route("/")
 def index():
     return render_template("index.html", profile=profile)
-
-app.run()
