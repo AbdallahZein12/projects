@@ -20,5 +20,5 @@ RUN pip3 install --no-cache-dir Flask gunicorn
 
 EXPOSE 8009
 
-CMD ["bash", "-c", "gunicorn -b 0.0.0.0:8009 main:app & caddy run --config /etc/caddy/Caddyfile"]
+CMD ["bash", "-c", "gunicorn -b 0.0.0.0:8009 app:app & caddy run --config /etc/caddy/Caddyfile"]
 
