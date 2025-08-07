@@ -1,0 +1,9 @@
+/var/log/gunicorn/access.log /var/log/gunicorn/error.log {
+    size 1G
+    rotate 10
+    compress
+    delaycompress
+    missingok
+    notifempty
+    su caddy caddy
+}

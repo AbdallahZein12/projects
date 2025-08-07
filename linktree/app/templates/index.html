@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ profile.name }} - Links</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-gradient d-flex flex-column align-items-center justify-content-center min-vh-100 text-center px-3">
+
+    <div class="card p-4 shadow-lg border-0 rounded-4 glass-card">
+        <img src="{{ profile.avatar }}" class="rounded-circle mb-3 shadow" width="120" height="120" alt="Avatar">
+        <h2 class="mb-0">{{ profile.name }}</h2>
+        <p class="text-muted mb-4">{{ profile.bio }}</p>
+
+        <div class="d-grid gap-3">
+            {% for link in profile.links %}
+            <a href="{{ link.url }}" target="_blank" class="btn btn-outline-light link-button fw-bold">
+                {{ link.name }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
